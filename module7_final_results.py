@@ -121,9 +121,34 @@ def run_final_synthesis(
     # PREDICTION WINDOW
     # =========================================================
 
-    pred_start_date = F_smooth.index[-1]
-    pred_end_date     = pred_start_date + pd.DateOffset(months=forward_months)
-    spx_at_pred_start = s5_actual
+    _target_horizon_map = {
+        'L5_sp500_tr_1m'  : 1,
+        'L5_sp500_tr_3m'  : 3,
+        'L5_sp500_tr_6m'  : 6,
+        'L5_sp500_tr_yoy' : 12,
+    }
+    target_horizon_months = _target_horizon_map.get(regression_target, forward_months)
+
+    # pred_end_date   = factor end + forward_months  (when we're predicting TO)
+    # pred_start_date = pred_end_date - target_horizon  (start of the full return window)
+    # Example: target=6m, fwd=1m, factors end Mar →
+    #   pred_end_date   = Apr
+    #   pred_start_date = Oct  (6m back from Apr)
+    #   realized_so_far = SPX return Oct → live (5m elapsed)
+    #   delta_needed    = central_case_up - realized_so_far  (1m still to go)
+
+    pred_end_date   = F_smooth.index[-1] + pd.DateOffset(months=forward_months)
+    pred_start_date = pred_end_date - pd.DateOffset(months=target_horizon_months)
+
+    # SPX level at the start of the target window — need to pull from history
+    try:
+        spx_hist = yf.Ticker('^GSPC').history(
+            start = pred_start_date.strftime('%Y-%m-%d'),
+            end   = (pred_start_date + pd.DateOffset(days=10)).strftime('%Y-%m-%d'),
+        )
+        spx_at_pred_start = spx_hist['Close'].iloc[0]
+    except Exception:
+        spx_at_pred_start = s5_actual  # fallback
 
     try:
         spx_live      = get_live_spx()
@@ -134,6 +159,7 @@ def run_final_synthesis(
         spx_live_date = pred_start_date.strftime('%b %Y')
         live_ok       = False
 
+    elapsed_months  = target_horizon_months - forward_months  # months already in the window
     realized_so_far = (spx_live / spx_at_pred_start) - 1
     days_remaining  = max((pred_end_date - pd.Timestamp.today()).days, 0)
 
@@ -540,7 +566,7 @@ def run_final_synthesis(
     logger.debug(f'  ▶ Direction consensus:  {consensus}')
     logger.debug(f'  ▶ {val_overlay}')
 
-    # ----------------------------------------------------------
+# ----------------------------------------------------------
     # FINAL STATEMENT
     # ----------------------------------------------------------
     logger.info('')
@@ -552,23 +578,32 @@ def run_final_synthesis(
     logger.info('1. Bias-corrected Kalman prediction (current month)')
     logger.info('2. Historical mean realized SPX return for current Quintile')
     logger.info('')
-    logger.info(f'  Prediction window:    {pred_start_date.strftime("%b %Y")} → '
-          f'{pred_end_date.strftime("%b %Y")}  ({forward_months}m horizon)')
-    logger.info(f'  SPX at pred start:    ${spx_at_pred_start:>8,.0f}  '
+    logger.info(f'  Target window:        {pred_start_date.strftime("%b %Y")} → '
+          f'{pred_end_date.strftime("%b %Y")}  '
+          f'({target_horizon_months}m target, predicting {forward_months}m forward)')
+    logger.info(f'  Elapsed in window:    {elapsed_months}m of {target_horizon_months}m  '
+          f'({pred_start_date.strftime("%b %Y")} → today)')
+    logger.info(f'  SPX at window start:  ${spx_at_pred_start:>8,.0f}  '
           f'({pred_start_date.strftime("%b %Y")})')
     logger.info(f'  SPX live:             ${spx_live:>8,.0f}  '
           f'({spx_live_date}'
           f'{"" if live_ok else " — fallback, yfinance unavailable"})')
-    logger.info(f'  Realized so far:      {realized_so_far:>+.1%}')
+    logger.info(f'  Realized so far:      {realized_so_far:>+.1%}  '
+          f'({elapsed_months}m elapsed of {target_horizon_months}m window)')
     logger.info('')
-    logger.info(f'  {upside_prob:.0%} odds of positive return by '
+    logger.info(f'  Full-window prediction ({target_horizon_months}m):')
+    logger.info(f'  {upside_prob:.0%} odds positive by '
           f'{pred_end_date.strftime("%b %Y")}:   '
-          f'{central_case_up:>+.1%} total  /  {remaining_upside:>+.1%} remaining')
-    logger.info(f'  {downside_prob:.0%} odds of negative return by '
+          f'central case {central_case_up:>+.1%}')
+    logger.info(f'  {downside_prob:.0%} odds negative by '
           f'{pred_end_date.strftime("%b %Y")}:   '
-          f'{central_case_down:>+.1%} total  /  {remaining_down:>+.1%} remaining')
+          f'central case {central_case_down:>+.1%}')
+    logger.info('')
+    logger.info(f'  Delta needed in remaining {forward_months}m  '
+          f'(today → {pred_end_date.strftime("%b %Y")}):')
     logger.info(f'  ({days_remaining} days remaining in window)')
-    logger.info(f'% odds above reflect empirical hit rate of {current_quintile_label.split("—")[0].strip()}. all months {eval_start_year} through present {pd.Timestamp.today().year}.')
+    logger.info(f'  % odds reflect empirical hit rate of {current_quintile_label.split("—")[0].strip()}, '
+          f'all months {eval_start_year}–{pd.Timestamp.today().year}.')
     logger.info('')
     logger.debug(f'  ▶ {quadrant_val}  |  {quadrant_macro}')
 
