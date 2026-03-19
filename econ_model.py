@@ -76,6 +76,13 @@ em_tol = 1e-4 # tolerances for EM algo (affects runtime). tol=1e-4 means stop wh
 # The problem with this result is 5m are shared between FWD and Target, thus autocorrelation and OOS R2 is high. For more honest OOS R2, 
 # try to use FWD (prediction windows) which are >= TARGET. That said, parameter combos of Target >= FWD can still be very useful. 
 
+# TARGET=3m SPX | FWD=3 | "Tactical Cycle"
+# Factors selected and evaluated on the same 3m horizon. Clean, non-overlapping windows (~222 obs).
+# Shorter selection horizon vs. 6m means faster-moving series dominate factor construction:
+# labor market momentum, credit spreads, ISM/PMI, consumer sentiment.
+# Expect lower in-sample R² than 6m/6m but cleaner real-time signal with less lag.
+# Use for quarterly positioning, earnings season context, and short-cycle regime detection.
+
 # TARGET=12m SPX | FWD=12 | "Macro Cycle"
 # Long-horizon factors and prediction. likely that HAC autocorrelation fix correction fires (~55 obs, below stride threshold).
 # Designed to include slow-moving series in factors that fail the 6m filter: profit cycles, capex, fiscal, wealth effects.
@@ -88,10 +95,6 @@ em_tol = 1e-4 # tolerances for EM algo (affects runtime). tol=1e-4 means stop wh
 # TARGET=6m SPX | FWD=3 | "Intermediate"
 # 6m-quality factors applied to a 3m prediction horizon. Bridge between regime and tactical signals. 
 # Strong corrected OOS R² (0.46) for a 3m macro model. Predictions use built in bias correction (1.35x too spread).
-
-# TARGET=6m SPX | FWD=1 | "Tactical"
-# 6m-quality factors applied to monthly predictions. Highest OOS R² of the three (0.65+), 671 obs, fastest Kalman beta adaptation.
-# Use for monthly positioning and early regime shift detection.
 
 
 # Step 0 - import data
