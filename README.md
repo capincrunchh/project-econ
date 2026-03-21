@@ -80,10 +80,13 @@ approximately 25-35 minutes depending on your machine and API response times.
 To update to the latest version, navigate to the project-econ folder in your terminal and run:
 
 Mac users:
+
 cd ~/Desktop/project-econ
 
 Windows users:
+
 cd $HOME\Desktop\project-econ
+
 
 NOTE THAT: git reset --hard origin/main will delete any files not matching the repo, save those outside the project folder
 
