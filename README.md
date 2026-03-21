@@ -85,10 +85,13 @@ cd ~/Desktop/project-econ
 Windows users:
 cd $HOME\Desktop\project-econ
 
+NOTE THAT: git reset --hard origin/main will delete any files not matching the repo, save those outside the project folder
+
 Then:
 git fetch origin
-git merge origin/main
+git reset --hard origin/main
 uv sync
+
 
 # PHILOSOPHY BEHIND THE MODEL: 
 ------------------------------
