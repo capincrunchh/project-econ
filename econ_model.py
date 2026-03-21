@@ -276,5 +276,5 @@ else:
     logger.info(f'Not up to date. Your version {version}. Current version {current_version}')
     logger.info(f'Copy-paste these lines in terminal to update:')
     logger.info(f'git fetch origin')
-    logger.info(f'git reset --hard origin/main')   
+    logger.info(f'git merge origin/main')
     logger.info(f'uv sync')

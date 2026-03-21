@@ -87,7 +87,7 @@ cd $HOME\Desktop\project-econ
 
 Then:
 git fetch origin
-git reset --hard origin/main
+git merge origin/main
 uv sync
 
 # PHILOSOPHY BEHIND THE MODEL: 
