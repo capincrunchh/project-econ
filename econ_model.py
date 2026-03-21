@@ -277,4 +277,5 @@ else:
     logger.info(f'Copy-paste these lines in terminal to update:')
     logger.info(f'git fetch origin')
     logger.info(f'git reset --hard origin/main')
+    logger.info(f'git checkout -- API_keys.py')
     logger.info(f'uv sync')

@@ -85,11 +85,12 @@ cd ~/Desktop/project-econ
 Windows users:
 cd $HOME\Desktop\project-econ
 
-NOTE THAT: git checkout origin/main will delete any files not matching the repo, save those outside the project folder
+NOTE THAT: git reset --hard origin/main will delete any files not matching the repo, save those outside the project folder
 
 Then:
 git fetch origin
-git checkout origin/main -- $(git ls-files | grep -v API_keys.py)
+git reset --hard origin/main
+git checkout -- API_keys.py
 uv sync
 
 
