@@ -18,7 +18,6 @@ Important note on data leakage:
 This is designed to consume data leakage free inputs. Any potential data leakage stems from a prior bad input, such as module 1, 2, 3, 6, or 8. 
 Those results should be free of data-leakage, therefore this is free of data-leakage. 
 
-
 Module 9b has its own separate leakage in two places that are independent of Module 8:
 
 init_new_factor_value — runs its own fresh PCA on the new factor's composite series to initialize F0
