@@ -88,10 +88,15 @@ cd $HOME\Desktop\project-econ
 NOTE THAT: git reset --hard origin/main will delete any files not matching the repo, save those outside the project folder
 
 Then:
+
 git stash push API_keys.py
+
 git fetch origin
+
 git reset --hard origin/main
+
 git stash pop
+
 uv sync
 
 
