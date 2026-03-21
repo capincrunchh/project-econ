@@ -75,6 +75,20 @@ uv run econ_model.py
 Note: The model prints progress to terminal as it runs. Total runtime is 
 approximately 25-35 minutes depending on your machine and API response times.
 
+# UPDATING:
+-------------
+To update to the latest version, navigate to the project-econ folder in your terminal and run:
+
+Mac users:
+cd ~/Desktop/project-econ
+
+Windows users:
+cd $HOME\Desktop\project-econ
+
+Then:
+git pull
+uv sync
+
 # PHILOSOPHY BEHIND THE MODEL: 
 ------------------------------
 

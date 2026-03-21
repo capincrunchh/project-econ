@@ -11,6 +11,7 @@ logging.basicConfig(
         logging.StreamHandler()                  # also print to terminal
     ]
 )
+import urllib.request
 
 from API_keys import EIA_api_key, FRED_api_key, BEA_api_key, BLS_api_key
 from module0_data_get_all import DFM_master_data_get
@@ -27,7 +28,7 @@ from module6_walk_forward_optimization import run_kalman_regression
 from module7_final_results import run_final_synthesis
 from module8_added_factors import run_composite_factor_analysis
 from module9_loop import run_factor_addition_loop
-
+from version import version
 
 '''
 Important note on data leakage:
@@ -264,3 +265,15 @@ final_Lambda.to_csv('lambda_estimated_final.csv')
 final_kalman_results['df_predictions'].to_csv('predictions_final.csv')
 script_end = time.time()
 logger.info(f'Total runtime:  {(script_end - script_start) / 60:.1f} min')
+# Step 11 - Version checker
+url = "https://raw.githubusercontent.com/capincrunchh/project-econ/main/version.py"
+namespace = {}
+exec(urllib.request.urlopen(url).read(), namespace)
+current_version = namespace["version"]
+if current_version == version:
+    logger.info(f'Current version up to date. {version}')
+else:
+    logger.info(f'Not up to date. Your version {version}. Current version {current_version}')
+    logger.info(f'Copy-paste these 2 lines in terminal to update:')
+    logger.info(f'git pull')
+    logger.info(f'uv sync')
