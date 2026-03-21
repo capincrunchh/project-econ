@@ -86,7 +86,8 @@ Windows users:
 cd $HOME\Desktop\project-econ
 
 Then:
-git pull
+git fetch origin
+git reset --hard origin/main
 uv sync
 
 # PHILOSOPHY BEHIND THE MODEL: 
