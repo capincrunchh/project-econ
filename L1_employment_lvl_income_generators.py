@@ -39,8 +39,8 @@ def get_bls_series(series_ids, BLS_api_key, start_year):
     headers = {"Content-type": "application/json"}
     end_year = pd.Timestamp.now().year
     all_dfs = []
-    for chunk_start in range(start_year, end_year + 1, 20):
-        chunk_end = min(chunk_start + 19, end_year)
+    for chunk_start in range(start_year, end_year + 1, 10):
+        chunk_end = min(chunk_start + 9, end_year)
         payload = {
             "seriesid": series_ids,
             "startyear": str(chunk_start),
@@ -148,7 +148,9 @@ def get_employment_level(FRED_api_key, BLS_api_key):
 # RUNNING THE CODE:
 #
 
-#employment_level = get_employment_level(FRED_api_key, BLS_api_key)
-#print('L1: Running Employment Level Module. Gathering Data...')
-#employment_level.to_csv('employment_level.csv')
-#print('L1: Employment Level Module Complete.')
+employment_level = get_employment_level(FRED_api_key, BLS_api_key)
+print('L1: Running Employment Level Module. Gathering Data...')
+employment_level.to_csv('employment_level.csv')
+print('L1: Employment Level Module Complete.')
+
+# uv run python L1_employment_lvl_income_generators.py
