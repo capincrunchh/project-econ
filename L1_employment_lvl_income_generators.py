@@ -148,9 +148,7 @@ def get_employment_level(FRED_api_key, BLS_api_key):
 # RUNNING THE CODE:
 #
 
-employment_level = get_employment_level(FRED_api_key, BLS_api_key)
-print('L1: Running Employment Level Module. Gathering Data...')
-employment_level.to_csv('employment_level.csv')
-print('L1: Employment Level Module Complete.')
-
-# uv run python L1_employment_lvl_income_generators.py
+#employment_level = get_employment_level(FRED_api_key, BLS_api_key)
+#print('L1: Running Employment Level Module. Gathering Data...')
+#employment_level.to_csv('employment_level.csv')
+#print('L1: Employment Level Module Complete.')
