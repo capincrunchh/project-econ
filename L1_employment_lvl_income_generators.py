@@ -66,7 +66,7 @@ def get_bls_series(series_ids, BLS_api_key, start_year):
                 df = pd.DataFrame(rows).set_index("date")
                 dfs.append(df)
         if dfs:
-            all_dfs.append(pd.concat(dfs, axis=1))
+            all_dfs.append(pd.concat(dfs, axis=1, sort=False))
     combined = pd.concat(all_dfs).sort_index()
     combined = combined[~combined.index.duplicated(keep="first")]
 
