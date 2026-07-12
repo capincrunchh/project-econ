@@ -1,14 +1,22 @@
+import sys
+from pathlib import Path
+_MODEL_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(_MODEL_DIR.parent))                # project root: API_keys, version
+sys.path.insert(0, str(_MODEL_DIR / 'data_import'))       # L0-L5 data scripts
+sys.path.insert(0, str(_MODEL_DIR / 'model_1_modules'))   # module0-module9 scripts
+
 import pandas as pd
 import numpy as np
 import time
 import logging
+from model_paths import RUN_EXPORTS
 logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,                          # INFO in production, DEBUG when investigating
     format='%(message)s',
     handlers=[
-        logging.FileHandler('econ_model.log'),   # always write to file
-        logging.StreamHandler()                  # also print to terminal
+        logging.FileHandler(RUN_EXPORTS / 'econ_model.log'),   # always write to file
+        logging.StreamHandler()                                # also print to terminal
     ]
 )
 import urllib.request
@@ -100,7 +108,7 @@ em_tol = 1e-4 # tolerances for EM algo (affects runtime). tol=1e-4 means stop wh
 
 # Step 0 - import data
 df = DFM_master_data_get(START_YEAR)
-df.to_csv('all_econ_data.csv')
+df.to_csv(RUN_EXPORTS / 'all_econ_data.csv')
 script_start = time.time()
 # Step 1 - standardize data
 (   df_std, df_std_wf, TARGET_VARIABLE,
@@ -114,8 +122,8 @@ script_start = time.time()
     tiebreaker_gap    = tiebreaker_gap,
     oos_start_year    = oos_start_year,
 )
-df_std.to_csv('all_econ_data_standardized.csv')
-df_std_wf.to_csv('all_econ_data_standardized_wf.csv')
+df_std.to_csv(RUN_EXPORTS / 'all_econ_data_standardized.csv')
+df_std_wf.to_csv(RUN_EXPORTS / 'all_econ_data_standardized_wf.csv')
 # Step 2 - create F0 and Lambda matrix 
 # (full sample, for Steps 3-5)
 growth_init,    pca_growth       = init_growth_factor_value(df_std, GROWTH_COLS)
@@ -123,14 +131,14 @@ discount_init,  pca_discount     = init_discount_factor_value(df_std, DISCOUNT_C
 risk_prem_init, pca_risk_premium = init_risk_premium_factor_value(df_std, RISK_PREMIUM_COLS)
 F0         = build_F0(growth_init, discount_init, risk_prem_init)
 lambda_df  = build_lambda_df_init(df_std, GROWTH_COLS, DISCOUNT_COLS, RISK_PREMIUM_COLS, pca_growth, pca_discount, pca_risk_premium)
-lambda_df.to_csv('lambda_init.csv')
+lambda_df.to_csv(RUN_EXPORTS / 'lambda_init.csv')
 # (data leakage free, for Steps 6+)
 growth_init_wf,    pca_growth_wf       = init_growth_factor_value(df_std_wf, GROWTH_COLS_WF)
 discount_init_wf,  pca_discount_wf     = init_discount_factor_value(df_std_wf, DISCOUNT_COLS_WF)
 risk_prem_init_wf, pca_risk_premium_wf = init_risk_premium_factor_value(df_std_wf, RISK_PREMIUM_COLS_WF)
 F0_wf        = build_F0(growth_init_wf, discount_init_wf, risk_prem_init_wf)
 lambda_df_wf = build_lambda_df_init(df_std_wf, GROWTH_COLS_WF, DISCOUNT_COLS_WF, RISK_PREMIUM_COLS_WF, pca_growth_wf, pca_discount_wf, pca_risk_premium_wf)
-lambda_df_wf.to_csv('lambda_init_wf.csv')
+lambda_df_wf.to_csv(RUN_EXPORTS / 'lambda_init_wf.csv')
 # Step 3 - EM algo (full series)
 all_cols = GROWTH_COLS + DISCOUNT_COLS + RISK_PREMIUM_COLS
 Y        = df_std[all_cols].values.astype(float)
@@ -147,8 +155,8 @@ results = run_em_dfm(
 dates    = df_std.index
 F_smooth = pd.DataFrame(results['F_smooth'], index=dates, columns=['Growth', 'Discount', 'Risk_Premium'])
 Lambda   = pd.DataFrame(results['Lambda'],   index=all_cols, columns=['Growth', 'Discount', 'Risk_Premium'])
-F_smooth.to_csv('factor_scores.csv')
-Lambda.to_csv('lambda_estimated.csv')
+F_smooth.to_csv(RUN_EXPORTS / 'factor_scores.csv')
+Lambda.to_csv(RUN_EXPORTS / 'lambda_estimated.csv')
 logger.info(f'Final log-likelihood: {results["ll_history"][-1]:.2f}')
 # Step 4 - SPX Regression (full series)
 step4_results = run_spx_regression(
@@ -260,9 +268,9 @@ final_synthesis = run_final_synthesis(
     df_raw            = df,
     df_ranked         = df_ranked_wf,
 )
-final_F_smooth.to_csv('factor_scores_final.csv')
-final_Lambda.to_csv('lambda_estimated_final.csv')
-final_kalman_results['df_predictions'].to_csv('predictions_final.csv')
+final_F_smooth.to_csv(RUN_EXPORTS / 'factor_scores_final.csv')
+final_Lambda.to_csv(RUN_EXPORTS / 'lambda_estimated_final.csv')
+final_kalman_results['df_predictions'].to_csv(RUN_EXPORTS / 'predictions_final.csv')
 script_end = time.time()
 logger.info(f'Total runtime:  {(script_end - script_start) / 60:.1f} min')
 # Step 11 - Version checker

@@ -4,6 +4,7 @@ import statsmodels.api as sm
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import logging
+from model_paths import RUN_EXPORTS
 logger = logging.getLogger(__name__)
 
 
@@ -196,7 +197,7 @@ def run_gordon_growth_valuation(
     logger.info(f'  Z-Score (primary signal):      {latest.over_under_zscore:>+7.2f}σ  '
           f'(+2.0 = expensive, -2.0 = cheap)')
 
-    df_history.to_csv('gordon_growth_valuation.csv')
+    df_history.to_csv(RUN_EXPORTS / 'gordon_growth_valuation.csv')
     logger.debug('')
     logger.debug('Valuation history saved to gordon_growth_valuation.csv')
 
@@ -292,7 +293,7 @@ def run_gordon_growth_valuation(
                  color='#aaaaaa')
 
         plt.tight_layout()
-        plt.savefig('gordon_growth_valuation.png', dpi=150,
+        plt.savefig(RUN_EXPORTS / 'gordon_growth_valuation.png', dpi=150,
                     bbox_inches='tight', facecolor='#0f0f0f')
         plt.show()
         logger.debug('Chart saved to gordon_growth_valuation.png')

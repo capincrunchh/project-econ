@@ -206,6 +206,72 @@ def run_final_synthesis(
     downside_mag = neg_months.mean() if len(neg_months) > 0 else np.nan
 
     # =========================================================
+    # WITHIN-QUINTILE ALIGNMENT (factor-space centroid distance)
+    # =========================================================
+    # Months in the current quintile are split by realized outcome
+    # (+ pile / − pile). Today's factor configuration is compared to
+    # each pile's centroid via Mahalanobis distance using a pooled
+    # covariance (the minority pile is too small to support its own),
+    # with each squared distance bias-corrected by p/n_pile to offset
+    # centroid estimation noise — without this the small pile always
+    # looks artificially further away.
+
+    factor_cols_align = list(F_smooth.columns)
+    q_hist            = df_eval[df_eval['q'] == current_q]
+    common_dates      = q_hist.index.intersection(F_smooth.index)
+    X_hist            = F_smooth.loc[common_dates, factor_cols_align].astype(float)
+    realized_hist     = q_hist.loc[common_dates, 'realized_return']
+
+    X_pos = X_hist[realized_hist.values >= 0].values
+    X_neg = X_hist[realized_hist.values <  0].values
+    x_now = F_smooth[factor_cols_align].iloc[-1].values.astype(float)
+    p_dim = len(factor_cols_align)
+
+    align_group         = None
+    align_d_pos         = np.nan
+    align_d_neg         = np.nan
+    align_gap           = np.nan
+    align_gap_threshold = np.nan
+    align_caveat        = None
+    ALIGN_MIN_OBS       = 15
+
+    if len(X_pos) >= 2 and len(X_neg) >= 2:
+        mu_pos = X_pos.mean(axis=0)
+        mu_neg = X_neg.mean(axis=0)
+        resid  = np.vstack([X_pos - mu_pos, X_neg - mu_neg])
+        sigma  = resid.T @ resid / max(len(X_pos) + len(X_neg) - 2, 1)
+        s_inv  = np.linalg.pinv(sigma)
+
+        def _bc_dist(x, mu, n_pile):
+            diff = x - mu
+            d2   = float(diff @ s_inv @ diff) - p_dim / n_pile
+            return np.sqrt(max(d2, 0.0))
+
+        align_d_pos = _bc_dist(x_now, mu_pos, len(X_pos))
+        align_d_neg = _bc_dist(x_now, mu_neg, len(X_neg))
+
+        # Distance gap only counts as a verdict if it clears the combined
+        # centroid-estimation noise of the two piles — otherwise NEUTRAL.
+        # Scales with pile size: small minority pile ⇒ bigger gap required.
+        align_gap_threshold = np.sqrt(p_dim / len(X_pos) + p_dim / len(X_neg))
+        align_gap           = align_d_neg - align_d_pos   # >0 ⇒ closer to + pile
+        if abs(align_gap) <= align_gap_threshold:
+            align_group = 'NEUTRAL'
+        else:
+            align_group = 'POSITIVE' if align_gap > 0 else 'NEGATIVE'
+
+        n_min = min(len(X_pos), len(X_neg))
+        if n_min < ALIGN_MIN_OBS:
+            pile_name    = 'negative' if len(X_neg) < len(X_pos) else 'positive'
+            align_caveat = (f'low sample: only {n_min} {pile_name} months in this '
+                            f'quintile — distance estimate unreliable')
+    else:
+        n_min        = min(len(X_pos), len(X_neg))
+        pile_name    = 'negative' if len(X_neg) < len(X_pos) else 'positive'
+        align_caveat = (f'alignment unavailable: only {n_min} {pile_name} '
+                        f'month(s) in this quintile')
+
+    # =========================================================
     # QUINTILE HISTORY STATS
     # =========================================================
 
@@ -233,6 +299,39 @@ def run_final_synthesis(
 
     remaining_upside = central_case_up   - realized_so_far
     remaining_down   = central_case_down - realized_so_far
+
+    # =========================================================
+    # TOP INDICATORS TO WATCH (sensitivity × typical monthly move)
+    # =========================================================
+    # Net SPX sensitivity per indicator: sum over factors of
+    # (EM loading × current Kalman beta) — a +1σ move in the
+    # indicator shifts the predicted forward return by ~this much.
+    # Ranked by |sensitivity| × the indicator's typical monthly
+    # step (std of month-over-month changes in σ units), so
+    # volatile series outrank frozen ones at equal slope.
+    # Directional influence heuristic, not exact attribution —
+    # same caveat as the factor decomposition block.
+
+    beta_factors = [f for f in Lambda.columns if f in s6_betas]
+    watch_list   = []
+    for indicator in Lambda.index:
+        if indicator not in current_std.index or pd.isna(current_std[indicator]):
+            continue
+        net_sens = sum(Lambda.loc[indicator, f] * s6_betas[f] for f in beta_factors)
+        if np.isnan(net_sens):
+            continue
+        series_std = df_std_decomp[indicator].dropna()
+        step_std   = series_std.diff().dropna().std()
+        if not np.isfinite(step_std) or step_std == 0:
+            continue
+        watch_list.append({
+            'indicator'   : indicator,
+            'net_sens'    : net_sens,                  # SPX return per +1σ move
+            'step_std'    : step_std,                  # typical monthly move (σ)
+            'typ_impact'  : abs(net_sens) * step_std,  # ranking score
+            'current_sig' : current_std[indicator],
+        })
+    watch_list.sort(key=lambda d: d['typ_impact'], reverse=True)
 
     # =========================================================
     # HELPER: signal strength labels
@@ -455,7 +554,7 @@ def run_final_synthesis(
     for var in ['Growth', 'Discount', 'Risk_Premium']:
         beta = s4_params.get(var, np.nan)
         pval = s4_pvalues.get(var, np.nan)
-        direction = 'bullish signal ↑' if beta < 0 else 'bearish signal ↑'
+        direction = 'factor ↑ ⇒ predicted SPX ↑' if beta > 0 else 'factor ↑ ⇒ predicted SPX ↓'
         logger.info(f'    {var:<16}  β={beta:+.4f}  {pval_label(pval)}  ({direction})')
     logger.info('')
 
@@ -599,11 +698,38 @@ def run_final_synthesis(
           f'{pred_end_date.strftime("%b %Y")}:   '
           f'central case {central_case_down:>+.1%}')
     logger.info('')
+    logger.info('  Within-quintile alignment:')
+    if align_group is not None:
+        if align_group == 'NEUTRAL':
+            logger.info('    NEUTRAL — configuration roughly equidistant from both groupings')
+        else:
+            logger.info(f'    Current configuration sits closer to the {align_group} grouping')
+        logger.info(f'    ({align_d_pos:.1f}σ from + centroid vs {align_d_neg:.1f}σ from − centroid; '
+              f'gap {abs(align_gap):.2f}σ vs {align_gap_threshold:.2f}σ noise threshold)')
+        if min(align_d_pos, align_d_neg) > 2.0:
+            logger.info('    (note: configuration is an outlier vs BOTH groupings — '
+                  'historical analogues are weak)')
+        if align_caveat is not None:
+            logger.info(f'    ({align_caveat})')
+    else:
+        logger.info(f'    ({align_caveat})')
+    logger.info('')
     logger.info(f'  Delta needed in remaining {forward_months}m  '
           f'(today → {pred_end_date.strftime("%b %Y")}):')
     logger.info(f'  ({days_remaining} days remaining in window)')
     logger.info(f'  % odds reflect empirical hit rate of {current_quintile_label.split("—")[0].strip()}, '
           f'all months {eval_start_year}–{pd.Timestamp.today().year}.')
+    logger.info('')
+    logger.info(f'  ▶ TOP 3 INDICATORS TO WATCH  '
+          f'(ranked by SPX sensitivity × typical monthly move)')
+    for rank, w in enumerate(watch_list[:3], start=1):
+        bull_bear = 'BULLISH' if w['net_sens'] > 0 else 'BEARISH'
+        logger.info(f'    {rank}. {w["indicator"]:<32} rising is {bull_bear} for SPX')
+        logger.info(f'       +1σ move ⇒ {w["net_sens"]:+.1%} SPX ({target_horizon_months}m, standalone)  |  '
+              f'typical monthly move ±{w["step_std"]:.2f}σ ⇒ ±{w["typ_impact"]:.1%} SPX  |  '
+              f'now {w["current_sig"]:+.1f}σ vs history')
+    if len(watch_list) == 0:
+        logger.info('    (no indicators available — loadings or betas missing)')
     logger.info('')
     logger.debug(f'  ▶ {quadrant_val}  |  {quadrant_macro}')
 
@@ -635,6 +761,13 @@ def run_final_synthesis(
         'pred_end_date'       : pred_end_date,
         'spx_live'            : spx_live,
         'days_remaining'      : days_remaining,
+        'align_group'         : align_group,
+        'align_gap'           : align_gap,
+        'align_gap_threshold' : align_gap_threshold,
+        'align_d_pos'         : align_d_pos,
+        'align_d_neg'         : align_d_neg,
+        'align_caveat'        : align_caveat,
+        'watch_list'          : watch_list,
     }
 
 

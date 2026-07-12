@@ -9,6 +9,7 @@ from module6_walk_forward_optimization import run_kalman_regression
 from module7_final_results import run_final_synthesis
 from module8_added_factors import COMPOSITE_CANDIDATES
 import logging
+from model_paths import RUN_EXPORTS
 logger = logging.getLogger(__name__)
 
 
@@ -329,7 +330,7 @@ def run_step9b_factor_rebuild(
     )
 
     lambda_fname = f'lambda_init_{n_new}factor_{new_factor_name}.csv'
-    lambda_nf.to_csv(lambda_fname)
+    lambda_nf.to_csv(RUN_EXPORTS / lambda_fname)
     logger.debug(f'  Lambda saved to {lambda_fname}')
     logger.debug('')
 
@@ -373,7 +374,7 @@ def run_step9b_factor_rebuild(
     )
 
     lambda_est_fname = f'lambda_estimated_{n_new}factor_{new_factor_name}.csv'
-    Lambda_nf.to_csv(lambda_est_fname)
+    Lambda_nf.to_csv(RUN_EXPORTS / lambda_est_fname)
 
     logger.info(f'  Final log-likelihood: {results_em["ll_history"][-1]:.2f}')
     logger.debug(f'  Lambda saved to {lambda_est_fname}')

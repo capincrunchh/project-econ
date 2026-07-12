@@ -5,6 +5,7 @@ import matplotlib.dates as mdates
 import warnings
 warnings.filterwarnings('ignore')
 import logging
+from model_paths import RUN_EXPORTS
 logger = logging.getLogger(__name__)
 
 
@@ -486,8 +487,8 @@ def run_kalman_regression(
     df_predictions['pred_bias_corrected'] = np.nan
     df_predictions.loc[df_eval.index, 'pred_bias_corrected'] = \
         df_eval['pred_bias_corrected'].values
-    df_predictions.to_csv('kalman_predictions.csv')
-    df_betas.to_csv('kalman_betas.csv')
+    df_predictions.to_csv(RUN_EXPORTS / 'kalman_predictions.csv')
+    df_betas.to_csv(RUN_EXPORTS / 'kalman_betas.csv')
     logger.debug('')
     logger.debug('Predictions saved to kalman_predictions.csv')
     logger.debug('Betas      saved to kalman_betas.csv')
@@ -603,7 +604,7 @@ def run_kalman_regression(
                          color='#aaaaaa', fontsize=8)
 
         plt.tight_layout()
-        plt.savefig('kalman_validation.png', dpi=150,
+        plt.savefig(RUN_EXPORTS / 'kalman_validation.png', dpi=150,
                     bbox_inches='tight', facecolor='#0f0f0f')
         plt.show()
         logger.debug('Chart saved to kalman_validation.png')

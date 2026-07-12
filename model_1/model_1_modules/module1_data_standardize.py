@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import logging
+from model_paths import RUN_EXPORTS
 logger = logging.getLogger(__name__)
 
 
@@ -379,7 +380,7 @@ def standardize_data(df, REGRESSION_TARGET, forward_months, r2_threshold, pval_t
         tiebreaker_gap = tiebreaker_gap,
         oos_start_year = oos_start_year,
     )
-    df_ranked_wf.to_csv('series_r2_ranking_presample.csv', index=False)
+    df_ranked_wf.to_csv(RUN_EXPORTS / 'series_r2_ranking_presample.csv', index=False)
 
     # --- Full-sample ranking: bucket assignment for Steps 2-5 ---
     GROWTH_COLS, DISCOUNT_COLS, RISK_PREMIUM_COLS, CURRENTLY_UNUSED_COLS, df_ranked = rank_and_assign_series(
@@ -391,7 +392,7 @@ def standardize_data(df, REGRESSION_TARGET, forward_months, r2_threshold, pval_t
         tiebreaker_gap = tiebreaker_gap,
         oos_start_year = None,
     )
-    df_ranked.to_csv('series_r2_ranking_fullsample.csv', index=False)
+    df_ranked.to_csv(RUN_EXPORTS / 'series_r2_ranking_fullsample.csv', index=False)
 
     # --- Validation helper ---
     def validate_buckets(growth, discount, rp, unused, df_ref, label):

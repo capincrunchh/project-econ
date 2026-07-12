@@ -1,1 +1,10 @@
 API_keys.py
+__pycache__/
+.DS_Store
+.venv/
+US Econ Datapoints.xlsx
+model_2/
+manual model plan.rtf
+archive/
+test.py
+Icon?

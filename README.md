@@ -62,15 +62,17 @@ uv sync
 
 **6. Adjust parameters to your liking**
 
-The main script is: econ_model.py
+The main script is: model_1/econ_model.py
 
-Open and modify econ_model.py to adjust the parameters to your liking, then save. Some recommended configurations are #commented.
+Open and modify model_1/econ_model.py to adjust the parameters to your liking, then save. Some recommended configurations are #commented.
 
 **7. Run (Copy/Paste this into terminal)**
 
 Same for Mac and Windows:
 
-uv run econ_model.py
+uv run model_1/econ_model.py
+
+Note: All run outputs (.csv files and econ_model.log) are written to model_1/run_exports/.
 
 Note: The model prints progress to terminal as it runs. Total runtime is 
 approximately 25-35 minutes depending on your machine and API response times.
@@ -102,6 +104,24 @@ git stash pop
 
 uv sync
 
+
+# PROJECT STRUCTURE:
+-------------
+```
+project-econ/
+├── API_keys.py               <- your API keys (edit this in Setup step 5)
+├── README.md
+├── pyproject.toml / uv.lock  <- dependencies (used by uv sync)
+├── version.py                <- version checker
+├── US Econ Datapoints.xlsx
+├── model_1/                  <- the dynamic factor model (V1)
+│   ├── econ_model.py         <- MAIN SCRIPT - run this
+│   ├── ADDING_NEW_DATA_MODEL1.md
+│   ├── data_import/          <- L0-L5 data collection scripts
+│   ├── model_1_modules/      <- module0-module9 model pipeline
+│   └── run_exports/          <- all run outputs (.csv files + econ_model.log)
+└── model_2/                  <- V2 deterministic model (in development)
+```
 
 # PHILOSOPHY BEHIND THE MODEL: 
 ------------------------------

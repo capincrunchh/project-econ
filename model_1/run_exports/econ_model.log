@@ -1,0 +1,2924 @@
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       2 series
+Discount bucket:     5 series
+Risk Premium bucket: 2 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.3074
+  Discount:     2.4477
+  Risk Premium: 0.4824
+  F0:           [-0.3074, 2.4477, 0.4824]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -2900.15
+  Converged at iteration 60
+Final log-likelihood: -2896.53
+
+Regression dataset:
+  Total months available:           675
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.1038
+  Adjusted R²:     0.0915
+  F-statistic:     8.45  (p=0.0000)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.70%
+    Equity risk premium (ERP):      5.29%
+    Growth rate (g):                2.50%
+    Denominator raw:                7.49%
+    Denominator smoothed:           7.24%
+    Denominator floored:            7.24%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    3065
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):     +114.8%
+  Historical Percentile:           94.3%  (vs 1990–present)
+  Z-Score (primary signal):        +1.84σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/435 months  (0%)  eta=11.5 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/435 months  (11%)  eta=10.1 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/435 months  (23%)  eta=10.2 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/435 months  (34%)  eta=9.6 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       2 series
+Discount bucket:     5 series
+Risk Premium bucket: 2 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.3074
+  Discount:     2.4477
+  Risk Premium: 0.4824
+  F0:           [-0.3074, 2.4477, 0.4824]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -2900.15
+  Converged at iteration 60
+Final log-likelihood: -2896.53
+
+Regression dataset:
+  Total months available:           675
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.1038
+  Adjusted R²:     0.0915
+  F-statistic:     8.45  (p=0.0000)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.70%
+    Equity risk premium (ERP):      5.29%
+    Growth rate (g):                2.50%
+    Denominator raw:                7.49%
+    Denominator smoothed:           7.24%
+    Denominator floored:            7.24%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    3065
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):     +114.8%
+  Historical Percentile:           94.3%  (vs 1990–present)
+  Z-Score (primary signal):        +1.84σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/435 months  (0%)  eta=11.3 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/435 months  (11%)  eta=9.6 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/435 months  (23%)  eta=9.7 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/435 months  (34%)  eta=9.2 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2005] Re-rank: +1 series promoted  (total # series incl in factors: 74)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 76)
+  EM walk-fwd progress: 200/435 months  (46%)  eta=8.8 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 85)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 86)
+  EM walk-fwd progress: 250/435 months  (57%)  eta=7.7 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 88)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  EM walk-fwd progress: 300/435 months  (69%)  eta=5.8 min remaining
+  EM walk-fwd progress: 350/435 months  (80%)  eta=3.8 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 90)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 92)
+  EM walk-fwd progress: 400/435 months  (92%)  eta=1.7 min remaining
+  EM walk-fwd progress: 435/435 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        675
+  Date range:          1970-01 → 2026-03
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-03
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.1419
+  In-sample R² (Step 4):      0.1038
+  Gate (OOS R² ≥ 0.10):       ✓ PASS
+  Directional accuracy:        82.8%  (>55% = useful)
+  Mean Abs Error:                         4.4%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.2416
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.1038  [MODERATE]
+  Adjusted R²:         0.0915
+  F-statistic:         8.45  (p=0.0000)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0101  **  (p<0.05) significant  (bullish signal ↑)
+    Discount          β=+0.0220  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=+0.0150  *** (p<0.01) highly significant  (bearish signal ↑)
+
+  ▶ Verdict:  RELIABLE — R² acceptable, factors significant, model valid
+
+  Step 4 current 3m prediction:  +2.2%
+  95% interval:  [-12.0%,  +16.4%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   3,065
+  Over/Under (raw):    +114.8%
+  Historical pctile:   94%
+  Z-Score (primary):   +1.84σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.1419  [PASS — beats naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.8%      39.5%
+    Q2                            +2.4%      70.5%
+    Q3                            +4.7%      93.0%
+    Q4                            +6.5%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0016  (model underpredicts on average)
+    Scale factor:        0.89x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2416  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=-0.0156
+    Discount          β=-0.0036
+    Risk_Premium      β=+0.0114
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.5%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Mar 2026 → Jun 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Mar 2026 → today)
+  SPX at window start:  $   6,882  (Mar 2026)
+  SPX live:             $   6,477  (Mar 26 2026)
+  Realized so far:      -5.9%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jun 2026:   central case +6.4%
+  5% odds negative by Jun 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jun 2026):
+  (66 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    72
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1108
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      17 series (unused + in df_std)
+  In model:       20 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7740   0.1458  +0.0350   0.5152    +0.1126      ❌
+  Financial_Stress        PCA   0.0013   0.7561   0.1408  +0.0301   0.8990    -1.1916      ❌
+  Labor                    EW   0.0054   0.5277   0.1407  +0.0299   0.9799    -0.7236      ❌
+  Labor                   PCA   0.0006   0.8280   0.1606  +0.0498   0.1985    -0.2275      ❌
+  Consumer                 EW   0.0214   0.2070   0.1443  +0.0335   0.5845    -0.5556      ❌
+  Consumer                PCA   0.0151   0.2908   0.1503  +0.0395   0.3727    -1.1049      ❌
+  Corporate                EW   0.0601   0.0329   0.1687  +0.0580   0.1258    +0.5218      ❌
+  Corporate               PCA   0.0369   0.0964   0.1520  +0.0412   0.3327    +1.5025      ❌
+  Government               EW   0.0066   0.4839   0.1422  +0.0315   0.7194    -0.2892      ❌
+  Government              PCA   0.0007   0.8215   0.1413  +0.0305   0.8174    +0.0675      ❌
+
+  3-factor in sample R²: 0.1108
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.1038
+  3-factor baseline OOS R²:         0.1419
+  3-factor baseline OOS R² (BC):    0.2416
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.1038  [MODERATE]
+  Adjusted R²:         0.0915
+  F-statistic:         8.45  (p=0.0000)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0101  **  (p<0.05) significant  (bullish signal ↑)
+    Discount          β=+0.0220  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=+0.0150  *** (p<0.01) highly significant  (bearish signal ↑)
+
+  ▶ Verdict:  RELIABLE — R² acceptable, factors significant, model valid
+
+  Step 4 current 3m prediction:  +2.2%
+  95% interval:  [-12.0%,  +16.4%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   3,065
+  Over/Under (raw):    +114.8%
+  Historical pctile:   94%
+  Z-Score (primary):   +1.84σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.1419  [PASS — beats naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.8%      39.5%
+    Q2                            +2.4%      70.5%
+    Q3                            +4.7%      93.0%
+    Q4                            +6.5%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0016  (model underpredicts on average)
+    Scale factor:        0.89x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2416  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=-0.0156
+    Discount          β=-0.0036
+    Risk_Premium      β=+0.0114
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.5%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Mar 2026 → Jun 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Mar 2026 → today)
+  SPX at window start:  $   6,882  (Mar 2026)
+  SPX live:             $   6,477  (Mar 26 2026)
+  Realized so far:      -5.9%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jun 2026:   central case +6.4%
+  5% odds negative by Jun 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jun 2026):
+  (66 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+Total runtime:  21.8 min
+Current version up to date. v1.2
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       2 series
+Discount bucket:     5 series
+Risk Premium bucket: 2 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.3074
+  Discount:     2.4480
+  Risk Premium: 0.4824
+  F0:           [-0.3074, 2.448, 0.4824]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [-0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -2901.42
+  Converged at iteration 58
+Final log-likelihood: -2898.58
+
+Regression dataset:
+  Total months available:           676
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.1038
+  Adjusted R²:     0.0915
+  F-statistic:     8.46  (p=0.0000)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.70%
+    Equity risk premium (ERP):      5.28%
+    Growth rate (g):                2.50%
+    Denominator raw:                7.48%
+    Denominator smoothed:           7.23%
+    Denominator floored:            7.23%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    3068
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):     +114.6%
+  Historical Percentile:           94.3%  (vs 1990–present)
+  Z-Score (primary signal):        +1.84σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/436 months  (0%)  eta=11.2 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/436 months  (11%)  eta=9.3 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/436 months  (23%)  eta=9.7 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/436 months  (34%)  eta=9.3 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2005] Re-rank: +1 series promoted  (total # series incl in factors: 74)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 76)
+  EM walk-fwd progress: 200/436 months  (46%)  eta=9.0 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 85)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 86)
+  EM walk-fwd progress: 250/436 months  (57%)  eta=7.9 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 88)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  EM walk-fwd progress: 300/436 months  (69%)  eta=6.0 min remaining
+  EM walk-fwd progress: 350/436 months  (80%)  eta=3.9 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 90)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 92)
+  EM walk-fwd progress: 400/436 months  (92%)  eta=1.7 min remaining
+  EM walk-fwd progress: 436/436 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        676
+  Date range:          1970-01 → 2026-04
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-04
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.1436
+  In-sample R² (Step 4):      0.1038
+  Gate (OOS R² ≥ 0.10):       ✓ PASS
+  Directional accuracy:        82.8%  (>55% = useful)
+  Mean Abs Error:                         4.4%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.2426
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.1038  [MODERATE]
+  Adjusted R²:         0.0915
+  F-statistic:         8.46  (p=0.0000)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0101  **  (p<0.05) significant  (bullish signal ↑)
+    Discount          β=+0.0220  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=+0.0150  *** (p<0.01) highly significant  (bearish signal ↑)
+
+  ▶ Verdict:  RELIABLE — R² acceptable, factors significant, model valid
+
+  Step 4 current 3m prediction:  +2.1%
+  95% interval:  [-12.1%,  +16.3%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   3,068
+  Over/Under (raw):    +114.6%
+  Historical pctile:   94%
+  Z-Score (primary):   +1.84σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.1436  [PASS — beats naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.8%      39.5%
+    Q2                            +2.4%      70.5%
+    Q3                            +4.7%      93.0%
+    Q4                            +6.5%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.89x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2426  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=-0.0158
+    Discount          β=-0.0035
+    Risk_Premium      β=+0.0116
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.5%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Apr 2026 → Jul 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Apr 2026 → today)
+  SPX at window start:  $   6,575  (Apr 2026)
+  SPX live:             $   6,583  (Apr 03 2026)
+  Realized so far:      +0.1%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jul 2026:   central case +6.1%
+  5% odds negative by Jul 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jul 2026):
+  (88 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    72
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      17 series (unused + in df_std)
+  In model:       20 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7739   0.1456  +0.0350   0.5069    +0.1700      ❌
+  Financial_Stress        PCA   0.0013   0.7560   0.1405  +0.0299   0.8868    -1.1918      ❌
+  Labor                    EW   0.0054   0.5277   0.1403  +0.0296   0.9751    -0.8253      ❌
+  Labor                   PCA   0.0006   0.8280   0.1600  +0.0494   0.2005    -0.2288      ❌
+  Consumer                 EW   0.0214   0.2070   0.1438  +0.0331   0.5916    -0.4844      ❌
+  Consumer                PCA   0.0151   0.2908   0.1496  +0.0389   0.3805    -1.0781      ❌
+  Corporate                EW   0.0601   0.0329   0.1688  +0.0582   0.1228    -1.6514      ❌
+  Corporate               PCA   0.0369   0.0964   0.1520  +0.0413   0.3249    +1.5025      ❌
+  Government               EW   0.0066   0.4839   0.1419  +0.0313   0.7127    -0.5070      ❌
+  Government              PCA   0.0007   0.8215   0.1409  +0.0302   0.8237    -0.0524      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.1038
+  3-factor baseline OOS R²:         0.1436
+  3-factor baseline OOS R² (BC):    0.2426
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.1038  [MODERATE]
+  Adjusted R²:         0.0915
+  F-statistic:         8.46  (p=0.0000)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0101  **  (p<0.05) significant  (bullish signal ↑)
+    Discount          β=+0.0220  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=+0.0150  *** (p<0.01) highly significant  (bearish signal ↑)
+
+  ▶ Verdict:  RELIABLE — R² acceptable, factors significant, model valid
+
+  Step 4 current 3m prediction:  +2.1%
+  95% interval:  [-12.1%,  +16.3%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   3,068
+  Over/Under (raw):    +114.6%
+  Historical pctile:   94%
+  Z-Score (primary):   +1.84σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.1436  [PASS — beats naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.8%      39.5%
+    Q2                            +2.4%      70.5%
+    Q3                            +4.7%      93.0%
+    Q4                            +6.5%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.89x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2426  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=-0.0158
+    Discount          β=-0.0035
+    Risk_Premium      β=+0.0116
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.5%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Apr 2026 → Jul 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Apr 2026 → today)
+  SPX at window start:  $   6,575  (Apr 2026)
+  SPX live:             $   6,583  (Apr 03 2026)
+  Realized so far:      +0.1%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jul 2026:   central case +6.1%
+  5% odds negative by Jul 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jul 2026):
+  (88 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+Total runtime:  22.4 min
+Current version up to date. v1.2
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       3 series
+Discount bucket:     2 series
+Risk Premium bucket: 4 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.9103
+  Discount:     1.2194
+  Risk Premium: -1.9089
+  F0:           [-0.9103, 1.2194, -1.9089]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [-0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -1458.27
+  Converged at iteration 53
+Final log-likelihood: -1457.81
+
+Regression dataset:
+  Total months available:           676
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.0934
+  Adjusted R²:     0.0810
+  F-statistic:     7.52  (p=0.0001)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           5.19%
+    Equity risk premium (ERP):      3.08%
+    Growth rate (g):                2.96%
+    Denominator raw:                5.31%
+    Denominator smoothed:           5.29%
+    Denominator floored:            5.29%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    4192
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):      +57.1%
+  Historical Percentile:           95.0%  (vs 1990–present)
+  Z-Score (primary signal):        +1.16σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/436 months  (0%)  eta=12.0 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/436 months  (11%)  eta=10.3 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/436 months  (23%)  eta=10.3 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/436 months  (34%)  eta=9.5 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 75)
+  EM walk-fwd progress: 200/436 months  (46%)  eta=8.9 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 84)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 85)
+  EM walk-fwd progress: 250/436 months  (57%)  eta=8.1 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 87)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 88)
+  EM walk-fwd progress: 300/436 months  (69%)  eta=6.1 min remaining
+  EM walk-fwd progress: 350/436 months  (80%)  eta=4.0 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 91)
+  EM walk-fwd progress: 400/436 months  (92%)  eta=1.8 min remaining
+  EM walk-fwd progress: 436/436 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        676
+  Date range:          1970-01 → 2026-04
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-04
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.0837
+  In-sample R² (Step 4):      0.0934
+  Gate (OOS R² ≥ 0.10):       ✗ FAIL
+  Directional accuracy:        82.8%  (>55% = useful)
+  Mean Abs Error:                         4.4%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.2130
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0934  [WEAK]
+  Adjusted R²:         0.0810
+  F-statistic:         7.52  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0193  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0203  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0200  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +2.3%
+  95% interval:  [-12.0%,  +16.6%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,192
+  Over/Under (raw):    +57.1%
+  Historical pctile:   95%
+  Z-Score (primary):   +1.16σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.0837  [MARGINAL — roughly ties naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.4%      72.1%
+    Q3                            +4.5%      92.2%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.1%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.87x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2130  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0022
+    Discount          β=+0.0161
+    Risk_Premium      β=+0.0022
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Apr 2026 → Jul 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Apr 2026 → today)
+  SPX at window start:  $   6,575  (Apr 2026)
+  SPX live:             $   7,126  (Apr 18 2026)
+  Realized so far:      +8.4%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jul 2026:   central case +6.4%
+  5% odds negative by Jul 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jul 2026):
+  (73 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    73
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      18 series (unused + in df_std)
+  In model:       19 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7738   0.1456  +0.0349   0.5045    +0.0583      ❌
+  Financial_Stress        PCA   0.0013   0.7559   0.1405  +0.0298   0.8834    -1.2169      ❌
+  Labor                    EW   0.0054   0.5277   0.1402  +0.0295   0.9738    -0.6895      ❌
+  Labor                   PCA   0.0006   0.8281   0.1599  +0.0492   0.2010    -0.1121      ❌
+  Consumer                 EW   0.0214   0.2070   0.1437  +0.0330   0.5937    -0.6072      ❌
+  Consumer                PCA   0.0151   0.2908   0.1494  +0.0388   0.3827    -1.1288      ❌
+  Corporate                EW   0.0601   0.0329   0.1689  +0.0582   0.1219    -0.6395      ❌
+  Corporate               PCA   0.0369   0.0964   0.1520  +0.0414   0.3226    +1.5429      ❌
+  Government               EW   0.0066   0.4839   0.1419  +0.0312   0.7108    -0.2336      ❌
+  Government              PCA   0.0007   0.8215   0.1408  +0.0301   0.8254    +0.0180      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.0934
+  3-factor baseline OOS R²:         0.0837
+  3-factor baseline OOS R² (BC):    0.2130
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0934  [WEAK]
+  Adjusted R²:         0.0810
+  F-statistic:         7.52  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0193  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0203  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0200  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +2.3%
+  95% interval:  [-12.0%,  +16.6%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,192
+  Over/Under (raw):    +57.1%
+  Historical pctile:   95%
+  Z-Score (primary):   +1.16σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.0837  [MARGINAL — roughly ties naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.4%      72.1%
+    Q3                            +4.5%      92.2%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.1%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.87x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2130  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0022
+    Discount          β=+0.0161
+    Risk_Premium      β=+0.0022
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Apr 2026 → Jul 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Apr 2026 → today)
+  SPX at window start:  $   6,575  (Apr 2026)
+  SPX live:             $   7,126  (Apr 18 2026)
+  Realized so far:      +8.4%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Jul 2026:   central case +6.4%
+  5% odds negative by Jul 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Jul 2026):
+  (73 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+Total runtime:  22.6 min
+Current version up to date. v1.2
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       3 series
+Discount bucket:     2 series
+Risk Premium bucket: 4 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.9100
+  Discount:     1.2211
+  Risk Premium: -1.9106
+  F0:           [-0.91, 1.2211, -1.9106]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -1462.85
+  Converged at iteration 53
+Final log-likelihood: -1462.39
+
+Regression dataset:
+  Total months available:           677
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.0918
+  Adjusted R²:     0.0793
+  F-statistic:     7.38  (p=0.0001)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           5.20%
+    Equity risk premium (ERP):      2.86%
+    Growth rate (g):                2.98%
+    Denominator raw:                5.08%
+    Denominator smoothed:           5.09%
+    Denominator floored:            5.09%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    4357
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):      +51.1%
+  Historical Percentile:           95.2%  (vs 1990–present)
+  Z-Score (primary signal):        +0.87σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/437 months  (0%)  eta=12.0 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/437 months  (11%)  eta=10.2 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/437 months  (23%)  eta=10.3 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/437 months  (34%)  eta=9.6 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 75)
+  EM walk-fwd progress: 200/437 months  (46%)  eta=9.0 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 84)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 85)
+  EM walk-fwd progress: 250/437 months  (57%)  eta=8.2 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 87)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 88)
+  EM walk-fwd progress: 300/437 months  (69%)  eta=6.2 min remaining
+  EM walk-fwd progress: 350/437 months  (80%)  eta=4.1 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 91)
+  EM walk-fwd progress: 400/437 months  (92%)  eta=1.8 min remaining
+  EM walk-fwd progress: 437/437 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        677
+  Date range:          1970-01 → 2026-05
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-05
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.0854
+  In-sample R² (Step 4):      0.0918
+  Gate (OOS R² ≥ 0.10):       ✗ FAIL
+  Directional accuracy:        82.8%  (>55% = useful)
+  Mean Abs Error:                         4.4%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.2138
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0918  [WEAK]
+  Adjusted R²:         0.0793
+  F-statistic:         7.38  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0190  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0202  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0199  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +2.1%
+  95% interval:  [-12.2%,  +16.4%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,357
+  Over/Under (raw):    +51.1%
+  Historical pctile:   95%
+  Z-Score (primary):   +0.87σ  [SLIGHTLY OVERVALUED]
+
+  ▶ Implication:  Valuation is roughly neutral — not a strong headwind or tailwind
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.0854  [MARGINAL — roughly ties naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.4%      72.1%
+    Q3                            +4.5%      92.2%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.87x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2138  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0025
+    Discount          β=+0.0173
+    Risk_Premium      β=+0.0018
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        May 2026 → Aug 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (May 2026 → today)
+  SPX at window start:  $   7,230  (May 2026)
+  SPX live:             $   7,520  (May 27 2026)
+  Realized so far:      +4.0%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Aug 2026:   central case +6.1%
+  5% odds negative by Aug 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Aug 2026):
+  (65 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    73
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      18 series (unused + in df_std)
+  In model:       19 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7736   0.1457  +0.0350   0.5072    +0.0614      ❌
+  Financial_Stress        PCA   0.0013   0.7558   0.1406  +0.0299   0.8878    -1.3390      ❌
+  Labor                    EW   0.0054   0.5277   0.1403  +0.0296   0.9754    -0.7663      ❌
+  Labor                   PCA   0.0006   0.8281   0.1601  +0.0494   0.2004    -0.1511      ❌
+  Consumer                 EW   0.0214   0.2070   0.1438  +0.0331   0.5911    -0.5614      ❌
+  Consumer                PCA   0.0151   0.2908   0.1497  +0.0390   0.3799    -1.5844      ❌
+  Corporate                EW   0.0601   0.0329   0.1688  +0.0581   0.1230    +0.6374      ❌
+  Corporate               PCA   0.0369   0.0966   0.1520  +0.0413   0.3258    +1.8190      ❌
+  Government               EW   0.0066   0.4839   0.1420  +0.0313   0.7131    +0.0177      ❌
+  Government              PCA   0.0007   0.8216   0.1409  +0.0302   0.8231    +0.4337      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.0918
+  3-factor baseline OOS R²:         0.0854
+  3-factor baseline OOS R² (BC):    0.2138
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0918  [WEAK]
+  Adjusted R²:         0.0793
+  F-statistic:         7.38  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0190  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0202  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0199  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +2.1%
+  95% interval:  [-12.2%,  +16.4%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,357
+  Over/Under (raw):    +51.1%
+  Historical pctile:   95%
+  Z-Score (primary):   +0.87σ  [SLIGHTLY OVERVALUED]
+
+  ▶ Implication:  Valuation is roughly neutral — not a strong headwind or tailwind
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.0854  [MARGINAL — roughly ties naive benchmark]
+    Directional acc:     82.8%  [EXCELLENT]
+    Mean Abs Error:                 4.4%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.4%      72.1%
+    Q3                            +4.5%      92.2%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0017  (model underpredicts on average)
+    Scale factor:        0.87x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.2138  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0025
+    Discount          β=+0.0173
+    Risk_Premium      β=+0.0018
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        May 2026 → Aug 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (May 2026 → today)
+  SPX at window start:  $   7,230  (May 2026)
+  SPX live:             $   7,520  (May 27 2026)
+  Realized so far:      +4.0%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Aug 2026:   central case +6.1%
+  5% odds negative by Aug 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Aug 2026):
+  (65 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+Total runtime:  22.9 min
+Current version up to date. v1.2
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Series ranking complete — tested: 155  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       5 series
+Discount bucket:     1 series
+Risk Premium bucket: 3 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -1.7302
+  Discount:     0.5974
+  Risk Premium: -1.6729
+  F0:           [-1.7302, 0.5974, -1.6729]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       0.0000
+  Discount:     -0.0000
+  Risk Premium: 0.0000
+  F0:           [0.0, -0.0, 0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -1447.45
+  Converged at iteration 76
+Final log-likelihood: -1441.53
+
+Regression dataset:
+  Total months available:           678
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.0940
+  Adjusted R²:     0.0816
+  F-statistic:     7.57  (p=0.0001)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.87%
+    Equity risk premium (ERP):      3.04%
+    Growth rate (g):                2.79%
+    Denominator raw:                5.12%
+    Denominator smoothed:           5.54%
+    Denominator floored:            5.54%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    4007
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):      +64.3%
+  Historical Percentile:           97.9%  (vs 1990–present)
+  Z-Score (primary signal):        +1.29σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/438 months  (0%)  eta=11.0 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/438 months  (11%)  eta=9.3 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/438 months  (23%)  eta=9.6 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/438 months  (34%)  eta=9.0 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 75)
+  EM walk-fwd progress: 200/438 months  (46%)  eta=8.5 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 84)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 85)
+  EM walk-fwd progress: 250/438 months  (57%)  eta=7.7 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 87)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 88)
+  EM walk-fwd progress: 300/438 months  (68%)  eta=5.8 min remaining
+  EM walk-fwd progress: 350/438 months  (80%)  eta=3.9 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 91)
+  EM walk-fwd progress: 400/438 months  (91%)  eta=1.8 min remaining
+  EM walk-fwd progress: 438/438 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        678
+  Date range:          1970-01 → 2026-06
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-06
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.2851
+  In-sample R² (Step 4):      0.0940
+  Gate (OOS R² ≥ 0.10):       ✓ PASS
+  Directional accuracy:        82.9%  (>55% = useful)
+  Mean Abs Error:                         4.3%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.3278
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0940  [WEAK]
+  Adjusted R²:         0.0816
+  F-statistic:         7.57  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0233  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,007
+  Over/Under (raw):    +64.3%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.29σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2851  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.5%      91.5%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3278  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0026
+    Discount          β=+0.0205
+    Risk_Premium      β=+0.0013
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jun 2026 → Sep 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jun 2026 → today)
+  SPX at window start:  $   7,600  (Jun 2026)
+  SPX live:             $   7,406  (Jun 08 2026)
+  Realized so far:      -2.6%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Sep 2026:   central case +6.2%
+  5% odds negative by Sep 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Sep 2026):
+  (84 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    73
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      18 series (unused + in df_std)
+  In model:       19 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7737   0.1456  +0.0350   0.5069    +0.2597      ❌
+  Financial_Stress        PCA   0.0013   0.7559   0.1405  +0.0299   0.8875    -1.3095      ❌
+  Labor                    EW   0.0054   0.5277   0.1403  +0.0296   0.9751    -0.7065      ❌
+  Labor                   PCA   0.0006   0.8281   0.1600  +0.0494   0.2005    -0.2093      ❌
+  Consumer                 EW   0.0214   0.2070   0.1438  +0.0331   0.5915    -1.0416      ❌
+  Consumer                PCA   0.0151   0.2908   0.1496  +0.0389   0.3803    -1.9131      ❌
+  Corporate                EW   0.0601   0.0329   0.1688  +0.0582   0.1228    -0.9852      ❌
+  Corporate               PCA   0.0369   0.0966   0.1520  +0.0413   0.3254    +2.3143      ❌
+  Government               EW   0.0066   0.4839   0.1419  +0.0313   0.7128    -0.5328      ❌
+  Government              PCA   0.0007   0.8216   0.1409  +0.0302   0.8234    -0.0717      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.0940
+  3-factor baseline OOS R²:         0.2851
+  3-factor baseline OOS R² (BC):    0.3278
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0940  [WEAK]
+  Adjusted R²:         0.0816
+  F-statistic:         7.57  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0233  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,007
+  Over/Under (raw):    +64.3%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.29σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2851  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.5%      91.5%
+    Q4                            +6.6%      94.6% ◀ current
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3278  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0026
+    Discount          β=+0.0205
+    Risk_Premium      β=+0.0013
+
+  ▶ Current quintile:    Quintile 4 — MILDLY BULLISH
+     Avg realized return at this quintile:  +6.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 94.6%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jun 2026 → Sep 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jun 2026 → today)
+  SPX at window start:  $   7,600  (Jun 2026)
+  SPX live:             $   7,406  (Jun 08 2026)
+  Realized so far:      -2.6%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  95% odds positive by Sep 2026:   central case +6.2%
+  5% odds negative by Sep 2026:   central case -3.8%
+
+  Delta needed in remaining 3m  (today → Sep 2026):
+  (84 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 4, all months 1970–2026.
+
+Total runtime:  21.6 min
+Current version up to date. v1.2
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Skipped (insufficient pre-OOS history): 1 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 154  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       5 series
+Discount bucket:     1 series
+Risk Premium bucket: 3 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -1.7319
+  Discount:     0.5984
+  Risk Premium: -1.6729
+  F0:           [-1.7319, 0.5984, -1.6729]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.0000
+  Discount:     -0.0000
+  Risk Premium: -0.0000
+  F0:           [-0.0, -0.0, -0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -1447.48
+  Converged at iteration 76
+Final log-likelihood: -1441.57
+
+Regression dataset:
+  Total months available:           679
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.0941
+  Adjusted R²:     0.0817
+  F-statistic:     7.58  (p=0.0001)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.86%
+    Equity risk premium (ERP):      2.99%
+    Growth rate (g):                2.78%
+    Denominator raw:                5.06%
+    Denominator smoothed:           5.50%
+    Denominator floored:            5.50%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    4035
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):      +63.2%
+  Historical Percentile:           97.9%  (vs 1990–present)
+  Z-Score (primary signal):        +1.26σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/439 months  (0%)  eta=11.0 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/439 months  (11%)  eta=9.1 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/439 months  (23%)  eta=9.5 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/439 months  (34%)  eta=9.0 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 75)
+  EM walk-fwd progress: 200/439 months  (46%)  eta=8.5 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 84)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 85)
+  EM walk-fwd progress: 250/439 months  (57%)  eta=7.7 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 87)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 88)
+  EM walk-fwd progress: 300/439 months  (68%)  eta=5.8 min remaining
+  EM walk-fwd progress: 350/439 months  (80%)  eta=3.9 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 91)
+  EM walk-fwd progress: 400/439 months  (91%)  eta=1.8 min remaining
+  EM walk-fwd progress: 439/439 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        679
+  Date range:          1970-01 → 2026-07
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-07
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.2841
+  In-sample R² (Step 4):      0.0941
+  Gate (OOS R² ≥ 0.10):       ✓ PASS
+  Directional accuracy:        82.9%  (>55% = useful)
+  Mean Abs Error:                         4.3%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.3272
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0941  [WEAK]
+  Adjusted R²:         0.0817
+  F-statistic:         7.58  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0234  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,035
+  Over/Under (raw):    +63.2%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.26σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2841  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.6%      91.5% ◀ current
+    Q4                            +6.5%      94.6%
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3272  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0030
+    Discount          β=+0.0210
+    Risk_Premium      β=+0.0009
+
+  ▶ Current quintile:    Quintile 3 — NEUTRAL
+     Avg realized return at this quintile:  +4.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 91.5%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jul 2026 → Oct 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jul 2026 → today)
+  SPX at window start:  $   7,483  (Jul 2026)
+  SPX live:             $   7,575  (Jul 12 2026)
+  Realized so far:      +1.2%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  91% odds positive by Oct 2026:   central case +4.7%
+  9% odds negative by Oct 2026:   central case -2.2%
+
+  Delta needed in remaining 3m  (today → Oct 2026):
+  (80 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 3, all months 1970–2026.
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    73
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      18 series (unused + in df_std)
+  In model:       19 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7733   0.1456  +0.0349   0.5025    +0.0849      ❌
+  Financial_Stress        PCA   0.0013   0.7559   0.1404  +0.0297   0.8817    -1.2924      ❌
+  Labor                    EW   0.0054   0.5277   0.1401  +0.0295   0.9728    -0.7791      ❌
+  Labor                   PCA   0.0006   0.8281   0.1598  +0.0491   0.2015    -0.2609      ❌
+  Consumer                 EW   0.0214   0.2070   0.1436  +0.0329   0.5950    -0.8249      ❌
+  Consumer                PCA   0.0151   0.2906   0.1493  +0.0387   0.3842    -1.6324      ❌
+  Corporate                EW   0.0601   0.0329   0.1689  +0.0582   0.1213    -3.8945      ❌
+  Corporate               PCA   0.0369   0.0966   0.1520  +0.0414   0.3216    +2.2573      ❌
+  Government               EW   0.0066   0.4839   0.1418  +0.0312   0.7095    -0.1111      ❌
+  Government              PCA   0.0007   0.8216   0.1407  +0.0301   0.8263    +0.6797      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.0941
+  3-factor baseline OOS R²:         0.2841
+  3-factor baseline OOS R² (BC):    0.3272
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0941  [WEAK]
+  Adjusted R²:         0.0817
+  F-statistic:         7.58  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0234  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,035
+  Over/Under (raw):    +63.2%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.26σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2841  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.6%      91.5% ◀ current
+    Q4                            +6.5%      94.6%
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3272  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0030
+    Discount          β=+0.0210
+    Risk_Premium      β=+0.0009
+
+  ▶ Current quintile:    Quintile 3 — NEUTRAL
+     Avg realized return at this quintile:  +4.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 91.5%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jul 2026 → Oct 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jul 2026 → today)
+  SPX at window start:  $   7,483  (Jul 2026)
+  SPX live:             $   7,575  (Jul 12 2026)
+  Realized so far:      +1.2%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  91% odds positive by Oct 2026:   central case +4.7%
+  9% odds negative by Oct 2026:   central case -2.2%
+
+  Delta needed in remaining 3m  (today → Oct 2026):
+  (80 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 3, all months 1970–2026.
+
+Total runtime:  21.7 min
+Current version up to date. v1.2
+Matplotlib is building the font cache; this may take a moment.
+Failed to extract font properties from /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc: FT_Open_Face (ft2font.cpp line 200) failed with error 0x02: unknown file format
+Failed to extract font properties from /System/Library/Fonts/Supplemental/NISC18030.ttf: Non-scalable fonts are not supported
+Failed to extract font properties from /System/Library/Fonts/Apple Color Emoji.ttc: Non-scalable fonts are not supported
+Failed to extract font properties from /System/Library/Fonts/LastResort.otf: tuple indices must be integers or slices, not str
+generated new fontManager
+=================================================================
+Series ranking using pre-OOS data only: 1970-01 → 1989-12  (240 months)
+Skipped (insufficient pre-OOS history): 41 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 114  passing filter: 35
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+Series ranking using full sample data
+Skipped (insufficient pre-OOS history): 1 series → added to CURRENTLY_UNUSED
+Series ranking complete — tested: 154  passing filter: 6
+Inclusion: R² > 0.05  p-value < 0.05  tiebreaker gap: 0.05
+--- Bucket validation: pre-OOS (Steps 6+) ---
+Growth bucket:       33 series
+Discount bucket:     3 series
+Risk Premium bucket: 2 series
+Currently unused:    126 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+--- Bucket validation: full-sample (Steps 2-5) ---
+Growth bucket:       5 series
+Discount bucket:     1 series
+Risk Premium bucket: 3 series
+Currently unused:    155 series
+Target:              L5_sp500_tr_3m
+Total series:        165
+Bucket assignment CLEAN — all series accounted for, no overlaps.
+Factor buckets assigned. Ready for PCA / EM.
+=================================================================
+F0 Initial State Vector
+  Growth:       -1.7319
+  Discount:     0.5984
+  Risk Premium: -1.6729
+  F0:           [-1.7319, 0.5984, -1.6729]
+Lambda Init Matrix Complete
+=================================================================
+F0 Initial State Vector
+  Growth:       -0.0000
+  Discount:     -0.0000
+  Risk Premium: -0.0000
+  F0:           [-0.0, -0.0, -0.0]
+Lambda Init Matrix Complete
+=================================================================
+Running EM algorithm...
+  Iteration   50 / 200  |  log-likelihood: -1447.48
+  Converged at iteration 76
+Final log-likelihood: -1441.57
+
+Regression dataset:
+  Total months available:           679
+  Months used in regression:        223
+  Observation method:               stride (3m non-overlapping)
+  Date range: 1970-01 to 2025-07
+  Target series:                    L5_sp500_tr_3m
+  Forward horizon:                  3 months
+  Factor columns (3):             ['Growth', 'Discount', 'Risk_Premium']
+=================================================================
+OLS Regression: Forward SPX Total Return on DFM Factors
+=================================================================
+Key Statistics:
+  R²:              0.0941
+  Adjusted R²:     0.0817
+  F-statistic:     7.58  (p=0.0001)
+  Observations:    223
+  Method:          stride (3m non-overlapping)
+=================================================================
+Gordon Growth Valuation (as of 2025-09)
+Data from 1990  |  12m smoothing on EPS + denominator
+=================================================================
+  Mapped inputs:
+    Risk-free rate (r_f):           4.86%
+    Equity risk premium (ERP):      2.99%
+    Growth rate (g):                2.78%
+    Denominator raw:                5.06%
+    Denominator smoothed:           5.50%
+    Denominator floored:            5.50%
+    EPS raw:                     $ 235.70
+    EPS smoothed:                $ 221.87
+
+  SPX Fair Value:                $    4035
+  SPX Actual:                   $    6584
+  Over/Undervaluation (raw):      +63.2%
+  Historical Percentile:           97.9%  (vs 1990–present)
+  Z-Score (primary signal):        +1.26σ  (+2.0 = expensive, -2.0 = cheap)
+Creating F_smooth_wf. F_smooth contains data-leak which inflates OOS R²
+F_smooth_wf resolves this issue.
+Dynamic re-ranking enabled — bucket lists will update annually within OOS window
+  EM walk-fwd progress: 1/439 months  (0%)  eta=11.1 min remaining
+  [1991] Re-rank: +3 series promoted  (total # series incl in factors: 41)
+  [1992] Re-rank: +1 series promoted  (total # series incl in factors: 42)
+  EM walk-fwd progress: 50/439 months  (11%)  eta=9.3 min remaining
+  [1995] Re-rank: +4 series promoted  (total # series incl in factors: 46)
+  [1997] Re-rank: +1 series promoted  (total # series incl in factors: 47)
+  EM walk-fwd progress: 100/439 months  (23%)  eta=9.7 min remaining
+  [2000] Re-rank: +1 series promoted  (total # series incl in factors: 48)
+  [2002] Re-rank: +8 series promoted  (total # series incl in factors: 56)
+  EM walk-fwd progress: 150/439 months  (34%)  eta=9.1 min remaining
+  [2003] Re-rank: +16 series promoted  (total # series incl in factors: 72)
+  [2004] Re-rank: +1 series promoted  (total # series incl in factors: 73)
+  [2006] Re-rank: +2 series promoted  (total # series incl in factors: 75)
+  EM walk-fwd progress: 200/439 months  (46%)  eta=8.7 min remaining
+  [2009] Re-rank: +9 series promoted  (total # series incl in factors: 84)
+  [2010] Re-rank: +1 series promoted  (total # series incl in factors: 85)
+  EM walk-fwd progress: 250/439 months  (57%)  eta=7.9 min remaining
+  [2011] Re-rank: +2 series promoted  (total # series incl in factors: 87)
+  [2012] Re-rank: +1 series promoted  (total # series incl in factors: 88)
+  EM walk-fwd progress: 300/439 months  (68%)  eta=6.0 min remaining
+  EM walk-fwd progress: 350/439 months  (80%)  eta=4.0 min remaining
+  [2022] Re-rank: +1 series promoted  (total # series incl in factors: 89)
+  [2023] Re-rank: +2 series promoted  (total # series incl in factors: 91)
+  EM walk-fwd progress: 400/439 months  (91%)  eta=1.8 min remaining
+  EM walk-fwd progress: 439/439 months  (100%)  eta=0.0 min remaining
+=================================================================
+Walk-Forward Optimization: Kalman Regression (Time-Varying Parameters)
+=================================================================
+  Start year:          1970
+  Prediction horizon:  3 month(s)
+  Beta drift Q:        0.001
+  Observation noise R: 0.005681
+  SPX mean return:     +0.0455  (added back to all predictions)
+  Intercept:           none — factors explain deviations from mean only
+  Burn-in obs:         24 months
+  Total months:        679
+  Date range:          1970-01 → 2026-07
+=================================================================
+Kalman Regression Results
+=================================================================
+  Evaluation period:           1972-01 → 2026-07
+  Out-of-sample predictions:   645
+
+  --- Core Metrics (raw predictions, no correction) ---
+  OOS R²:                      0.2841
+  In-sample R² (Step 4):      0.0941
+  Gate (OOS R² ≥ 0.10):       ✓ PASS
+  Directional accuracy:        82.9%  (>55% = useful)
+  Mean Abs Error:                         4.3%
+
+  --- After Bias Correction ---
+  OOS R² (corrected):          0.3272
+  Directional acc (corrected): 83.1%
+  Mean Abs Error (corrected):             4.2%
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0941  [WEAK]
+  Adjusted R²:         0.0817
+  F-statistic:         7.58  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0234  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,035
+  Over/Under (raw):    +63.2%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.26σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2841  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.6%      91.5% ◀ current
+    Q4                            +6.5%      94.6%
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3272  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0030
+    Discount          β=+0.0210
+    Risk_Premium      β=+0.0009
+
+  ▶ Current quintile:    Quintile 3 — NEUTRAL
+     Avg realized return at this quintile:  +4.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 91.5%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jul 2026 → Oct 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jul 2026 → today)
+  SPX at window start:  $   7,483  (Jul 2026)
+  SPX live:             $   7,575  (Jul 12 2026)
+  Realized so far:      +1.2%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  91% odds positive by Oct 2026:   central case +4.7%
+  9% odds negative by Oct 2026:   central case -2.2%
+
+  Within-quintile alignment:
+    Current configuration sits closer to the POSITIVE grouping
+    (2.1σ from + centroid vs 2.2σ from − centroid)
+    (low sample: only 11 negative months in this quintile — distance estimate unreliable)
+
+  Delta needed in remaining 3m  (today → Oct 2026):
+  (80 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 3, all months 1970–2026.
+
+  ▶ TOP 3 INDICATORS TO WATCH  (ranked by SPX sensitivity × typical monthly move)
+    1. L0_hy_credit_spread              rising is BEARISH for SPX
+       +1σ move ⇒ -2.2% SPX (3m, standalone)  |  typical monthly move ±0.62σ ⇒ ±1.4% SPX  |  now -1.1σ vs history
+    2. L3_spending_sustainability_ratio rising is BEARISH for SPX
+       +1σ move ⇒ -0.6% SPX (3m, standalone)  |  typical monthly move ±0.45σ ⇒ ±0.3% SPX  |  now +1.4σ vs history
+    3. L3_personal_saving_rate          rising is BULLISH for SPX
+       +1σ move ⇒ +0.6% SPX (3m, standalone)  |  typical monthly move ±0.40σ ⇒ ±0.2% SPX  |  now -1.4σ vs history
+
+=================================================================
+RECYCLING UNUSED SERIES INTO NEW COMPOSITE FACTORS
+=================================================================
+  Unused series available:    73
+  Composite candidates:       5
+  Regression target:          L5_sp500_tr_3m
+  Forward horizon:            3m
+  3-factor in sample R²:       0.1107
+  Leakage-free mode:          fitting restricted to pre-1990 data
+=================================================================
+  COMPOSITE: Financial_Stress
+=================================================================
+  Defined:        37 series
+  Available:      18 series (unused + in df_std)
+  In model:       19 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Labor
+=================================================================
+  Defined:        37 series
+  Available:      9 series (unused + in df_std)
+  In model:       28 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Consumer
+=================================================================
+  Defined:        27 series
+  Available:      16 series (unused + in df_std)
+  In model:       11 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Corporate
+=================================================================
+  Defined:        38 series
+  Available:      17 series (unused + in df_std)
+  In model:       21 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+  COMPOSITE: Government
+=================================================================
+  Defined:        23 series
+  Available:      10 series (unused + in df_std)
+  In model:       13 series (excluded — already active)
+  Missing data:   0 series (not in df_std)
+=================================================================
+SUMMARY — ALL COMPOSITES
+=================================================================
+  Composite            Method   R²solo   p-solo   R²incr      ΔR²   p-incr    Current  Pass?
+  ─────────────────────────────────────────────────────────────────
+  Financial_Stress         EW   0.0011   0.7733   0.1456  +0.0349   0.5025    +0.0849      ❌
+  Financial_Stress        PCA   0.0013   0.7559   0.1404  +0.0297   0.8817    -1.2924      ❌
+  Labor                    EW   0.0054   0.5277   0.1401  +0.0295   0.9728    -0.7791      ❌
+  Labor                   PCA   0.0006   0.8281   0.1598  +0.0491   0.2015    -0.2609      ❌
+  Consumer                 EW   0.0214   0.2070   0.1436  +0.0329   0.5950    -0.8249      ❌
+  Consumer                PCA   0.0151   0.2906   0.1493  +0.0387   0.3842    -1.6324      ❌
+  Corporate                EW   0.0601   0.0329   0.1689  +0.0582   0.1213    -3.8945      ❌
+  Corporate               PCA   0.0369   0.0966   0.1520  +0.0414   0.3216    +2.2573      ❌
+  Government               EW   0.0066   0.4839   0.1418  +0.0312   0.7095    -0.1111      ❌
+  Government              PCA   0.0007   0.8216   0.1407  +0.0301   0.8263    +0.6797      ❌
+
+  3-factor in sample R²: 0.1107
+  Pass criteria: ΔR² > 0.01  AND  p-incr < 0.05
+
+  Next step: select best passing composite → re-run walk-forward
+  optimization to test OOS R² improvement.
+=================================================================
+FACTOR ADDITION ROUND 1
+Current model: 3-factor  ['Growth', 'Discount', 'Risk_Premium']
+Threshold:     ΔOOS R² > 0.1
+=================================================================
+=================================================================
+4th FACTOR WALK-FORWARD DIAGNOSTIC
+=================================================================
+  3-factor baseline in-sample R²:   0.0941
+  3-factor baseline OOS R²:         0.2841
+  3-factor baseline OOS R² (BC):    0.3272
+  New factors to test:               0
+  Inclusion threshold:                ΔOOS R² > 0.10
+  No candidates passed filter (ΔR² > 0.01, p < .05)
+  Nothing to test. Retain 3-factor model.
+  No candidates passed filter. Stopping at 3-factor model.
+=================================================================
+FINAL SYNTHESIS REPORT
+Prediction horizon: 3 months  |  Target: L5_sp500_tr_3m
+=================================================================
+=================================================================
+OLS REGRESSION (Statistical Validity)
+=================================================================
+  In-sample R²:        0.0941  [WEAK]
+  Adjusted R²:         0.0817
+  F-statistic:         7.58  (p=0.0001)
+  Observations:        223  (non-overlapping)
+
+  Factor significance:
+    Growth            β=-0.0234  *** (p<0.01) highly significant  (bullish signal ↑)
+    Discount          β=+0.0126  *** (p<0.01) highly significant  (bearish signal ↑)
+    Risk_Premium      β=-0.0182  *** (p<0.01) highly significant  (bullish signal ↑)
+
+  ▶ Verdict:  PARTIALLY RELIABLE — weak R² but some factors significant
+
+  Step 4 current 3m prediction:  +1.5%
+  95% interval:  [-12.8%,  +15.8%]
+=================================================================
+GORDON GROWTH VALUATION (Market Stretch)
+=================================================================
+  SPX Actual:          $   6,584
+  SPX Fair Value:      $   4,035
+  Over/Under (raw):    +63.2%
+  Historical pctile:   98%
+  Z-Score (primary):   +1.26σ  [MODERATELY OVERVALUED]
+
+  ▶ Implication:  Valuation is a headwind — returns tend to be below average
+=================================================================
+KALMAN REGRESSION (OOS Predictive Validity)
+=================================================================
+  Out-of-sample performance (raw predictions):
+    OOS R²:              +0.2841  [PASS — beats naive benchmark]
+    Directional acc:     82.9%  [EXCELLENT]
+    Mean Abs Error:                 4.3%
+
+  Quintile ranking (definitive signal quality test):
+    Monotonicity:        100%  (PERFECT — signal is rankable across all regimes)
+    Quintile               Mean Realized  % Positive
+    ------------------------------------------------
+    Q1 (bearish)                  -2.9%      38.8%
+    Q2                            +2.5%      72.9%
+    Q3                            +4.6%      91.5% ◀ current
+    Q4                            +6.5%      94.6%
+    Q5 (bullish)                 +11.0%      96.1%
+
+  Bias analysis:
+    Mean error:          -0.0007  (model underpredicts on average)
+    Scale factor:        0.94x  (predictions 1.1x too spread)
+
+  After bias correction:
+    OOS R² (corrected):  +0.3272  [PASS — beats naive benchmark]
+    Directional acc:     83.1%
+    MAE (corrected):     4.2%
+
+  Current factor betas:
+    Growth            β=+0.0030
+    Discount          β=+0.0210
+    Risk_Premium      β=+0.0009
+
+  ▶ Current quintile:    Quintile 3 — NEUTRAL
+     Avg realized return at this quintile:  +4.6%  (since 1970, n=129 months)
+     % of months positive at this quintile: 91.5%
+
+=================================================================
+FINAL SUMMARY
+=================================================================
+
+Final prediction = average of:
+1. Bias-corrected Kalman prediction (current month)
+2. Historical mean realized SPX return for current Quintile
+
+  Target window:        Jul 2026 → Oct 2026  (3m target, predicting 3m forward)
+  Elapsed in window:    0m of 3m  (Jul 2026 → today)
+  SPX at window start:  $   7,483  (Jul 2026)
+  SPX live:             $   7,575  (Jul 12 2026)
+  Realized so far:      +1.2%  (0m elapsed of 3m window)
+
+  Full-window prediction (3m):
+  91% odds positive by Oct 2026:   central case +4.7%
+  9% odds negative by Oct 2026:   central case -2.2%
+
+  Within-quintile alignment:
+    Current configuration sits closer to the POSITIVE grouping
+    (2.1σ from + centroid vs 2.2σ from − centroid)
+    (low sample: only 11 negative months in this quintile — distance estimate unreliable)
+
+  Delta needed in remaining 3m  (today → Oct 2026):
+  (80 days remaining in window)
+  % odds reflect empirical hit rate of Quintile 3, all months 1970–2026.
+
+  ▶ TOP 3 INDICATORS TO WATCH  (ranked by SPX sensitivity × typical monthly move)
+    1. L0_hy_credit_spread              rising is BEARISH for SPX
+       +1σ move ⇒ -2.2% SPX (3m, standalone)  |  typical monthly move ±0.62σ ⇒ ±1.4% SPX  |  now -1.1σ vs history
+    2. L3_spending_sustainability_ratio rising is BEARISH for SPX
+       +1σ move ⇒ -0.6% SPX (3m, standalone)  |  typical monthly move ±0.45σ ⇒ ±0.3% SPX  |  now +1.4σ vs history
+    3. L3_personal_saving_rate          rising is BULLISH for SPX
+       +1σ move ⇒ +0.6% SPX (3m, standalone)  |  typical monthly move ±0.40σ ⇒ ±0.2% SPX  |  now -1.4σ vs history
+
+Total runtime:  22.2 min
+Current version up to date. v1.2
